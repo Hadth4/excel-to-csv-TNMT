@@ -31,10 +31,10 @@ if uploaded_files:
                 # Convert sang CSV bằng code convert.py
                 convert_excel_to_glossary(src, out_csv)
 
-                # Hiển thị preview
+                # Hiển thị preview 5 dòng đầu
                 df_preview = pd.read_csv(out_csv)
                 st.subheader(f"📊 Preview kết quả cho {uploaded_file.name}")
-                st.dataframe(df_preview.head())
+                st.dataframe(df_preview.head(5))
 
                 # Cho tải về file CSV
                 with open(out_csv, "rb") as f:
